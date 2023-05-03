@@ -21,10 +21,10 @@ screen_helper = """
     text_size: self.width, None
     text: root.text
     font_size: '40sp'
-
+  
 <QuizSelect>:
   FloatLayout:
-    ScrollView:
+    MDScrollView:
       pos_hint:{"center_x":0.5,"top":0.8}
       do_scroll_x: False
       do_scroll_y: True
@@ -65,18 +65,18 @@ screen_helper = """
           on_release: root.screen_manager.current = "q7"
           text: "Quiz 7"
           IconLeftWidget:
-            icon: "cat"
+            icon: "hammer"
         OneLineAvatarIconListItem:
           on_release: root.screen_manager.current = "q8"
           text: "Quiz 8"
           IconLeftWidget:
-            icon: "brush"
-
+            icon: "hammer"
+        
 
 
 <LevelSelect>:
   FloatLayout:
-    ScrollView:
+    MDScrollView:
       pos_hint:{"center_x":0.5,"top":0.8}
       do_scroll_x: False
       do_scroll_y: True
@@ -157,7 +157,7 @@ screen_helper = """
 
 <StorySelect>:
   FloatLayout:
-    ScrollView:
+    MDScrollView:
       pos_hint:{"center_x":0.5,"top":0.8}
       do_scroll_x: False
       do_scroll_y: True
@@ -190,14 +190,14 @@ screen_helper = """
           IconLeftWidget:
             icon: "hammer"
 
+      
 
-
-
+    
 
 <MenuButton>:
   text: "Go to Menu"
   on_press: root.screen_manager.current = "levels"
-
+  
 
 <ContentNavigationDrawer>:
   ScrollView:
@@ -227,7 +227,7 @@ screen_helper = """
     pos_hint: {"top": 1}
     title: 'Toki Pona'
     left_action_items: [["menu",lambda x: nav_drawer.set_state('open')]]
-
+          
   MDNavigationLayout:
     x: toolbar.height
 
@@ -237,8 +237,8 @@ screen_helper = """
         name: "levels"
         LevelSelect:
           screen_manager: screen_manager
-
-
+          
+          
       Screen: 
         name: "quiz"
         QuizSelect:
@@ -282,7 +282,7 @@ screen_helper = """
             root.s3time()
             root.butspress()
             screen_manager.current = "storyactual"
-
+            
       Screen:
         screen_manager: screen_manager
         name: "storyactual"
@@ -312,7 +312,7 @@ screen_helper = """
             pos_hint:{"center_x":0.8,"top":0.7}
             text: "Switch Languages"
             on_press: root.switchmodes()
-
+          
 
 
       Screen:
@@ -357,7 +357,7 @@ screen_helper = """
             root.q4time()
             screen_manager.current = "ques1"
             root.addno()
-
+          
       Screen:
         screen_manager: screen_manager
         name: "q5"
@@ -402,7 +402,7 @@ screen_helper = """
             screen_manager.current = "ques1"
             root.addno()
 
-
+      
       Screen:
         screen_manager: screen_manager
         name: "ques1"
@@ -430,8 +430,8 @@ screen_helper = """
           on_press: 
             screen_manager.current = "ques2"
             root.addno()
-
-
+          
+          
       Screen:
         screen_manager: screen_manager
         name: "ques2"
@@ -782,7 +782,7 @@ screen_helper = """
               text: "[b]Vocabulary[/b]\\nsijelo - body, torso\\nalasa - hunt, search\\npilin - feeling, touch, heart\\nuta - mouth, lips\\ntaso - but, however, only\\nweka - absent, remote, away\\npu - 'Toki Pona: The Language of Good', interacting with it\\nsinpin - face, front, wall\\nlupa - door, window, hole\\nunpa - sexual relations\\nku - interacting with 'Toki Pona Dictionary'\\n\\n[b]Comparative Sentences[/b]\\n\\nIn toki pona, you combine two sentences for comparative sentences. For example: \\n\\nmi pona mute. sina pona. - I am better than you\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n"
               font_size: "18sp"
               color: 0.41,0.75,1,1
-
+      
       Screen:
         screen_manager: screen_manager
         name: "lvl10"
@@ -865,7 +865,7 @@ screen_helper = """
               text: "[b]Vocabulary[/b]  \\nsewi - high, above, top, sky  \\ninsa - inside, stomach  \\nanpa - ground, low, deep, to defeat  \\nmonsi - back, behind  \\npoka - near, nearby, side  \\nakesi - reptile, amphibian, not cute creature  \\nmu - animal onomatopoeia  \\nkala - sea creature, fish  \\nsoweli - animal  \\nwaso - bird  \\n\\n[b]More Prepositions...[/b] \\nsewi, insa, anpa, monsi and poka by themselves are used as nouns. However, when paired with other verbs like tawa and lon, they can be used as prepositions.  \\n\\nsina lon sewi mi - You are above me (lit. you are in my above)  \\nona li lon anpa mi - He is under me.  \\nmoku li lon insa mi - Food is inside me.  \\npipi moku lon poka ona - The bug is eating beside him.  \\n\\n[b]Animals[/b] \\n\\nLet's start with soweli. soweli means animal and usually refers to mammals and land animals. \\nkala is used as fish or any marine animal.  \\nThe original meaning of akesi was an animal that wasn't cute, but has also came to mean reptiles or amphibians.  \\nmu can refer to any animal noise, whether it be 'meow', 'woof' or 'oink'.  \\n\\nThere is a word that is well known in the toki pona community that refers to a certain type of animal... let's talk about it later.  \\n\\n\\n\\n\\n\\n\\n\\n\\n\\n"
               font_size: "18sp"
               color: 0.41,0.75,1,1
-
+      
       Screen:
         screen_manager: screen_manager
         name: "lvl6"
@@ -887,7 +887,7 @@ screen_helper = """
               font_size: "18sp"
               color: 0.41,0.75,1,1
 
-
+      
       Screen:
         screen_manager: screen_manager
         name: "lvl5"
@@ -931,7 +931,7 @@ screen_helper = """
               font_size: "18sp"
               color: 0.41,0.75,1,1
 
-
+      
       Screen:
         screen_manager: screen_manager
         name: "lvl3"
@@ -952,7 +952,7 @@ screen_helper = """
               text: "[b]Vocabulary[/b]  \\ne - object marker  \\nmeli - woman, female  \\nmije - man, male  \\ntomo - house  \\nijo - thing  \\nilo - tool, machine  \\nlukin - look, see, eye \\npana - to give, to emit  \\nkili - fruit, vegetable  \\nwile - want, need, must  \\nutala - fight, war\\n\\n[b]Specifying the object[/b]  \\nWhen you want to specify the object in a sentence, use 'e'. For example,  \\nmi moku [b]e[/b] kili - I am eating a fruit \\n\\n For the verb 'wile', you put 'e' after the infinitive. \\n\\nmi wile lukin [b]e[/b] tomo - I want to see the house. \\n\\n[b]Adjectives[/b]\\n\\nIn Toki Pona, you put the adjectives after the noun. For example, \\n\\nilo suli - big tool\\nijo pona - good thing\\n\\nPronouns also work as adjectives.\\n\\nmije mi - my husband\\nmeli sina - your wife\\n\\nYou can use multiple adjectives at a time. \\n\\njan utala ike - bad soldier (jan utala - soldier, knight etc.)\\n\\nSome compound words have specific meanings and have turned into phrases.\\n\\njan pona - friend  \\n\\n[b]Adverbs[/b]\\n\\nAdverbs are used the same way adjectives would be used.  \\n\\nmi lukin lili e ona - I barely saw it.\\n\\n\\n\\n\\n\\n\\n\\n\\n"
               font_size: "18sp"
               color: 0.41,0.75,1,1
-
+      
       Screen:
         screen_manager: screen_manager
         name: "lvl2"
@@ -973,7 +973,7 @@ screen_helper = """
               text: "[b]Vocabulary[/b]  \\nmi - I, me  \\nsina - you  \\nona - he, she, they  \\npona - good, simple, to fix  \\nmoku - food, eat  \\nsuli - big, tall, important  \\nlili - small, unimportant, short  \\njan - person, human  \\ntelo - drink, water, liquid  \\nli - subject marker  \\ntoki - talk, speak, hello/hi\\n\\nWe will be learning about how to make basic sentences in Toki Pona. \\n\\nWords in Toki Pona have many different meanings. For example, 'suli' can mean big or important. That's how Toki Pona keeps the word count low. It may seem confusing and vague at first, but once you try it out and use these words more, you'll get used to it.  \\n\\n[b]To Be [/b]\\nToki Pona has no equivalent to the verb 'to be'. Let's take these examples. \\n\\nmi pona - I [b]am[/b] good. \\nsina lili - You [b]are[/b] small.  \\n\\nWhenever you use 'mi' or 'sina', you can just put the adjective or verb you want to use without having to use anything else. Simple! You may be wondering, don't some sentences have double meanings? This is true. The sentence 'mi moku' can mean 'I eat' or 'I am food'. You do not have to worry about this, as most times the meaning is shown through context.  \\n\\n[b]Using 'li'[/b]  \\nWhenever you have a sentence that doesnt use 'mi' or 'sina' as its subject, you use 'li'. For example,  \\n\\nmoku [b]li[/b] pona - Food [b]is[/b] good.  \\njan [b]li[/b] suli. - The person [b]is[/b] tall.  \\n\\nThere are no verb conjugations in Toki Pona. 'moku' can mean 'eating', 'will eat' or 'ate'. \\n\\nThere are no capitals in Toki Pona except when using proper nouns, every letter is lowercase.\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n\\n"
               font_size: "18sp"
               color: 0.41,0.75,1,1
-
+        
       Screen:
         screen_manager: screen_manager
         name: "lvl1"
@@ -994,19 +994,19 @@ screen_helper = """
               text: "This is the first lesson of this app! Today we will we be learning about pronunciation. Toki Pona has just 14 letters! Below is a table on how to pronounce the letters. The letters in bold are how to pronounce the given letter.  \\n\\n[b]a[/b] - f[b]a[/b]ther\\n[b]e[/b] - m[b]e[/b]t\\n[b]i[/b] - st[b]ea[/b]l\\n[b]o[/b] - p[b]o[/b]le\\n[b]u[/b] - r[b]oo[/b]t\\n\\n[b]k[/b] - [b]k[/b]ra[b]k[/b]en\\n[b]m[/b] - [b]m[/b]an\\n[b]p[/b] - [b]p[/b]ress\\n[b]l[/b] - [b]l[/b]ess  \\n[b]n[/b] - [b]n[/b]est\\n[b]s[/b] - [b]s[/b]ore\\n[b]t[/b] - [b]t[/b]ree\\n[b]w[/b] - [b]w[/b]ater\\n[b]j[/b] - [b]y[/b]ellow\\n\\n\\n\\n\\n\\n\\n\\n\\n"
               font_size: "18sp"
               color: 0.41,0.75,1,1
+          
+            
+             
+     
+              
 
+          
+              
+      
+    
+          
 
-
-
-
-
-
-
-
-
-
-
-
+     
 
 
     MDNavigationDrawer:
@@ -1016,8 +1016,8 @@ screen_helper = """
         screen_manager: screen_manager
         nav_drawer: nav_drawer
 
-
-
+      
+          
 OriginalScreen:        
 
 """
@@ -1061,28 +1061,22 @@ class OriginalScreen(Screen):
         "ni", "lape", "mute", "seli", "kalama", "kute", "lawa", "lete", "ma",
         "mani", "moli"
     ]
-    q44list = ["have", "symbol, sign, image, to draw", "rock, hard object, metal", "plant, grass, leaf",
-               "to work, to build, create", "bread, grain, cereal", "clay, semi-solid", "love, like, compassion",
-               "parent, ancestor, creator", "not, no", "all, everything"]
+    q44list = ["have", "symbol, sign, image, to draw", "rock, hard object, metal", "plant, grass, leaf", "to work, to build, create", "bread, grain, cereal", "clay, semi-solid", "love, like, compassion", "parent, ancestor, creator", "not, no", "all, everything"]
     a44list = ["jo", "sitelen", "kiwen", "kasi", "pali", "pan", "ko", "olin", "mama", "ala", "ale/ali"]
-    q55list = ["to be, at, in, on, exist", "to use, using, with", "to go, to move, to, for", "come",
-               "box, container, bowl etc.", "air, wind, spirit", "high, sky", "disgusting, yucky", "clothing, cloth",
-               "crazy, silly, weird", "destroy, mess up, generic expletive"]
+    q55list = ["to be, at, in, on, exist", "to use, using, with", "to go, to move, to, for", "come", "box, container, bowl etc.", "air, wind, spirit", "high, sky", "disgusting, yucky", "clothing, cloth", "crazy, silly, weird", "destroy, mess up, generic expletive"]
     a55list = ["lon", "kepeken", "tawa", "kama", "poki", "kon", "sewi", "jaki", "len", "nasa", "pakala"]
-    q66list = ["high, above, top, sky", "inside, stomach", "ground, low, deep, to defeat", "back, behind",
-               "near, nearby, side", "reptiel, amphibian, not cute creature", "animal onomatopoeia",
-               "sea creature, fish", "animal", "bird"]
+    q66list = ["high, above, top, sky", "inside, stomach", "ground, low, deep, to defeat", "back, behind", "near, nearby, side", "reptiel, amphibian, not cute creature", "animal onomatopoeia", "sea creature, fish", "animal", "bird"]
     a66list = ["sewi", "insa", "anpa", "monsi", "poka", "akesi", "mu", "kala", "soweli", "waso"]
-    q77list = ["same as, similar, like", "reason, cause, because", "signifies questions",
-               "particle for commands, adressing people", "interjection, !", "color, colorful", "black, dark", "yellow",
-               "blue, green", "red", "white, bright"]
-    a77list = ["sama", "tan", "seme", "o", "a", "kule", "pimeja", "jelo", "laso", "loje", "walo"]
-    q88list = ["if/when, conditional", "of, regroups words", "hand, arm", "foot, leg, to kick",
-               "hill, protrusion, nose", "string, hair, long and flexible item", "stick, branch",
-               "strong, energy, powerful", "know, intelligence, to be skilled in", "fun, art, music, game",
-               "document, paper, card, book"]
+    q77list = ["same as, similar, like", "reason, cause, because", "signifies questions", "particle for commands, adressing people", "interjection, !", "color, colorful", "black, dark", "yellow", "blue, green", "red", "white, bright"]
+    a77list = ["sama", "tan", "seme", "o", "a", "kule", "pimeja", "jelo", "laso", "loje", "walo" ]
+    q88list = ["if/when, conditional", "of, regroups words", "hand, arm", "foot, leg, to kick", "hill, protrusion, nose", "string, hair, long and flexible item", "stick, branch", "strong, energy, powerful", "know, intelligence, to be skilled in", "fun, art, music, game", "document, paper, card, book"]
     a88list = ["la", "pi", "luka", "noka", "nena", "linja", "palisa", "wawa", "sona", "musi", "lipu"]
 
+
+
+  
+
+  
     whatnoquiz = 0
     noofq = 0
     chooser = ""
@@ -1190,7 +1184,7 @@ class OriginalScreen(Screen):
         self.ids.q8q.text = self.q66list[7]
         self.ids.q9q.text = self.q66list[8]
         self.ids.q10q.text = self.q66list[9]
-
+        
         self.whatnoquiz = 6
 
     def q7time(self):
@@ -1221,6 +1215,7 @@ class OriginalScreen(Screen):
         self.ids.q11q.text = self.q77list[10]
         self.whatnoquiz = 8
 
+
     def close_dialog(self, obj):
         self.dialog.dismiss()
 
@@ -1239,7 +1234,7 @@ class OriginalScreen(Screen):
                                buttons=[close_button])
         self.dialog.open()
 
-    # storytime
+    #storytime
 
     storytext = ""
     whatnostory = 0
@@ -1272,18 +1267,18 @@ class OriginalScreen(Screen):
     guyt22 = ['[b]You[/b]: Why are you going to the restaurant?', '']
 
     guy13 = [
-        'meli li toki e soweli.', '[b]mije[/b]: mi pilin e ni: soweli ni li lili.'
+      'meli li toki e soweli.', '[b]mije[/b]: mi pilin e ni: soweli ni li lili.'
     ]
     guy23 = [
-        '[b]meli[/b]: soweli ni li suli!', '[b]meli[/b]: soweli li suli. sina li lili!'
+      '[b]meli[/b]: soweli ni li suli!', '[b]meli[/b]: soweli li suli. sina li lili!'
     ]
 
     guyt13 = [
-        'A woman is talking about an animal.', '[b]The man[/b]: I think that this animal is small.'
+      'A woman is talking about an animal.', '[b]The man[/b]: I think that this animal is small.'
     ]
 
     guyt23 = [
-        '[b]The woman[/b]: This animal is big!', '[b]The woman[/b]: The animal is bigger than you.'
+      '[b]The woman[/b]: This animal is big!', '[b]The woman[/b]: The animal is bigger than you.'
     ]
 
     storychooser1 = ""
